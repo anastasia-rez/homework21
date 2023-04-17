@@ -11,27 +11,20 @@ for (let i = 0; i < winterDays.length - 1; i++) {
 
 console.log(`Замерзаний в этот период было ${minus} раз`);
 
+let maxCount = 0;
 
-
-for (let i = 0; i < winterDays.length - 1; i++) {
+for (let i = 0; i < winterDays.length; i++) {
 
   if (winterDays[i] < 0) {
     countMinus++;
-    console.log(`количество дней подряд с минусовой температурой ${countMinus}`);
     } else if (winterDays[i] >= 0) {
     countMinus = 0;
     } 
-    console.log(Math.max(countMinus));
+
+  if (countMinus > maxCount) {
+    maxCount = countMinus;
+  }
+    
 }
 
-
-
-
-
-
-
-    
-
-
-
-
+console.log(`Количество дней подряд с минусовой температурой ${maxCount}`);
